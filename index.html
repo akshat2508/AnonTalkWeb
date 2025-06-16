@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnonTalk - Speak Freely, Stay Anonymous</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <nav>
+            <div class="logo">🛡️ AnonTalk</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-emoji">🛡️</div>
+                <h1>AnonTalk</h1>
+                <p class="tagline">Your voice matters. Your identity doesn't.</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        📱 Download Now
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        🔍 Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2 class="section-title">🔥 Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Anonymous Chat</h3>
+                    <p>No login. No profile. Just a unique ID. Jump into conversations without revealing your identity.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Real-time Messaging</h3>
+                    <p>Fast, responsive chat UI. Seamless experience built using Supabase and TypeScript.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Smart Onboarding</h3>
+                    <p>Smooth and minimal onboarding to get you talking in seconds. No complicated setup required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕒</div>
+                    <h3>Waiting Room</h3>
+                    <p>Queue-based room entry to ensure 1-on-1 chats. You're never alone — always connected to someone.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Privacy First</h3>
+                    <p>Never asks for sign-up. Stores no personal data. Keeps chats ephemeral and secure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Modular Architecture</h3>
+                    <p>Built using a scalable, maintainable code structure with Expo + React Native + Supabase.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="screenshots">
+            <div class="screenshots-container">
+                <h2 class="section-title">📱 App Screenshots</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot">
+                        <div class="screenshot-placeholder">
+                            <!-- 🚀 Onboarding Screen -->
+                            <img src="./onboaring.png" alt="🚀 Onboarding Screen">
+                        </div>
+                    </div>
+                    <div class="screenshot">
+                        <div class="screenshot-placeholder">
+                            <img src="./Waitingscreen .png" alt="🕒 Waiting Room">
+                        </div>
+                    </div>
+                    <div class="screenshot">
+                        <div class="screenshot-placeholder">
+                            <img src="./chat.png" alt="💬Chat Screen">
+                        </div>
+                    </div>
+                    <div class="screenshot">
+                        <div class="screenshot-placeholder">
+                            <img src="./feedback.png" alt="🗒️Feedback Screen">
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </section>
+
+        <section id="download" class="download">
+            <div class="download-container">
+                <div class="download-card">
+                    <h2>Ready to Speak Freely?</h2>
+                    <p>Download AnonTalk now and join thousands of users who are already connecting anonymously. Your journey to authentic conversations starts here.</p>
+                    <a href="#" class="download-btn" onclick="downloadApp()">
+                        <span>📱 Download APK</span>
+                        <span class="loading" id="loading" style="display: none;"></span>
+                    </a>
+                    <p style="margin-top: 20px; font-size: 14px; color: #666;">
+                        Available for Android • iOS version coming soon
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#support">Support</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-text">
+                © 2025 AnonTalk. Built with ❤️ for authentic human connection.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Header scroll effect
+        function handleScroll() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.8)';
+            }
+        }
+
+        // Download function
+        function downloadApp() {
+            const button = document.querySelector('.download-btn');
+            const loading = document.getElementById('loading');
+            const buttonText = button.querySelector('span:first-child');
+            
+            // Show loading state
+            loading.style.display = 'inline-block';
+            buttonText.textContent = '⏳ Preparing Download...';
+            
+            // Simulate download preparation
+            setTimeout(() => {
+                // Replace this with your actual APK download link
+                // const apkUrl = 'https://expo.dev/artifacts/eas/rwRsa2Vxo6QomUTVb5vtVA.apk'; // Replace with actual APK URL
+                const apkUrl = 'https://drive.google.com/uc?export=download&id=1z1jnDsfW-P1u-oOz7MooPal6pEFjy8Rz'; // Replace with actual APK URL
+
+                // Create download link
+                const link = document.createElement('a');
+                link.href = apkUrl;
+                link.download = 'AnonTalk.apk';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Reset button state
+                loading.style.display = 'none';
+                buttonText.textContent = '📱 Download APK';
+                
+                // Show success message
+                button.innerHTML = '<span>✅ Download Started!</span>';
+                setTimeout(() => {
+                    button.innerHTML = '<span>📱 Download APK</span>';
+                }, 3000);
+            }, 2000);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards and screenshot elements
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            
+            // Add initial styles for animation
+            document.querySelectorAll('.feature-card, .screenshot').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-content');
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
