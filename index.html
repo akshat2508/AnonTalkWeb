@@ -122,18 +122,44 @@
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#support">Support</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <p class="footer-text">
-                © 2025 AnonTalk. Built with ❤️ for authentic human connection.
-            </p>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#" onclick="showPrivacy()">Privacy Policy</a>
+            <a href="#" onclick="showTerms()">Terms of Service</a>
+            <a href="mailto:support@anontalk.app?subject=Support Request">Support</a>
+            <a href="mailto:contact@anontalk.app?subject=General Inquiry">Contact</a>
         </div>
-    </footer>
+        <p class="footer-text">
+            © 2025 AnonTalk. Built with ❤️ for authentic human connection.
+        </p>
+    </div>
+
+    <!-- Modals or alerts for Privacy & Terms -->
+    <script>
+        function showPrivacy() {
+            alert(
+                "📜 Privacy Policy:\n\n" +
+                "• We do not collect any personal data.\n" +
+                "• No login or user registration is required.\n" +
+                "• Conversations are not stored and are completely ephemeral.\n" +
+                "• We use Supabase securely and anonymously for real-time communication.\n" +
+                "• We do not share any data with third parties.\n\n" +
+                "For questions, email privacy@anontalk.app"
+            );
+        }
+
+        function showTerms() {
+            alert(
+                "📝 Terms of Service:\n\n" +
+                "• By using AnonTalk, you agree to maintain respectful communication.\n" +
+                "• You may not use this app for harassment, abuse, or illegal activity.\n" +
+                "• We reserve the right to restrict access if misuse is detected.\n" +
+                "• We are not liable for any content shared between users.\n\n" +
+                "Your safety matters. Be kind. Stay anonymous."
+            );
+        }
+    </script>
+</footer>
 
     <script>
         // Create floating particles
